@@ -2,6 +2,10 @@ package textFieldDemo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class TextFieldDemo extends JFrame {
 
@@ -31,12 +35,67 @@ public class TextFieldDemo extends JFrame {
         container.add(jTextField);
 
         jTextField2 = new JTextField();
-        jTextField2.setText("your name");
-        jTextField2.setFont(font);
+//        jTextField2.setText("your name");
         jTextField2.setBounds(50,110,200,50);
+        jTextField2.setFont(font);
         container.add(jTextField2);
 
+
+//        jTextField.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                String getText = jTextField.getText();
+//                if (getText.isEmpty()){
+//                    JOptionPane.showMessageDialog(null,"You didn't enter anything");
+//                }else {
+//                    JOptionPane.showMessageDialog(null,"jTextField = "+getText);
+//                }
+//
+//            }
+//        });
+
+//        jTextField2.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                String getText = jTextField2.getText();
+//                if (getText.isEmpty()){
+//                    JOptionPane.showMessageDialog(null,"You didn't enter anything");
+//                }else {
+//                    JOptionPane.showMessageDialog(null,"jTextField = "+getText);
+//                }
+//
+//            }
+//        });
+
+        Handler handler = new Handler();
+        jTextField.addActionListener(handler);
+        jTextField2.addActionListener(handler);
     }
+
+    class Handler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            if(e.getSource()==jTextField) {
+                String getText = jTextField.getText();
+                if (getText.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "You didn't enter anything");
+                } else {
+                    JOptionPane.showMessageDialog(null, "jTextField = " + getText);
+                }}
+                else {
+                    String getText = jTextField2.getText();
+                if (getText.isEmpty()){
+                    JOptionPane.showMessageDialog(null,"You didn't enter anything");
+                }else {
+                    JOptionPane.showMessageDialog(null,"jTextField2 = " + getText);
+                }
+                }
+        }
+    }
+
+
 
     public static void main(String[] args) {
         TextFieldDemo textFieldDemo=  new TextFieldDemo();
