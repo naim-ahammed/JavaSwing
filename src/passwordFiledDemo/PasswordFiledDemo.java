@@ -11,6 +11,8 @@ public class PasswordFiledDemo extends JFrame {
     private Container c;
     private JPasswordField pf;
 
+    private Font f;
+
     PasswordFiledDemo(){
         initComponents();
     }
@@ -20,6 +22,8 @@ public class PasswordFiledDemo extends JFrame {
         c = this.getContentPane();
         c.setLayout(null);
         c.setBackground(Color.orange);
+
+        f = new Font("Arial",Font.BOLD,19);
 
         pf = new JPasswordField();
         pf.setEchoChar('*');
@@ -33,7 +37,7 @@ public class PasswordFiledDemo extends JFrame {
         textFieldDemo.setVisible(true);
         textFieldDemo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         textFieldDemo.setBounds(100, 50, 500, 400);
-        textFieldDemo.setTitle("JTest Field Demo");
+        textFieldDemo.setTitle("Password Filed Demo");
     }
 
 }
