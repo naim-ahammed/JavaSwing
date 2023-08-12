@@ -23,10 +23,13 @@ public class PasswordFiledDemo extends JFrame {
         c.setLayout(null);
         c.setBackground(Color.orange);
 
-        f = new Font("Arial",Font.BOLD,19);
+        f = new Font("Arial",Font.BOLD,29);
 
         pf = new JPasswordField();
         pf.setEchoChar('*');
+        pf.setForeground(Color.blue);
+        pf.setBackground(Color.gray);
+        pf.setFont(f);
         pf.setBounds(50,20,150,50);
         c.add(pf);
     }
